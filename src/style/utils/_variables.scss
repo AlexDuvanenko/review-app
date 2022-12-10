@@ -1,0 +1,42 @@
+// theme colors
+$primary: #0d8aee;
+$secondary: #4caf50;
+$error: #d32f2f;
+$black: #000;
+$white: #fff;
+
+$surface-base: #fafafa;
+
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "error": $error,
+    "surface": $surface-base, 
+    "black": $black,
+    "white": $white,
+);
+
+// spacing
+$base-padding: 0.5rem;
+$base-margin: 0.5rem;
+
+// borders
+$base-border-width: 1px;
+$base-border-radius: 20px;
+
+// font sizes
+$base-font-size: 1rem;
+$font-size-large: 3rem;
+
+// box shadow
+$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+
+// breakpoints
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);

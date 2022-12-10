@@ -1,0 +1,54 @@
+@use 'variables';
+@use 'sass:map';
+
+// breakpoints
+@mixin media-breakpoint-up($size) {
+    $newMap: map-remove(variables.$breakpoints, xs); // xs not necessary as min-width is 0
+
+    @if not map-has-key($newMap, $size) {
+        @error "Property #{$size} is not valid breakpoint size. Valid sizes: #{map.keys($newMap)}";
+    }
+
+    @if map-has-key($newMap, $size) {
+        $size: map-get($newMap, $size);
+
+        @media (min-width: $size) {
+            @content;
+        }
+    }
+}
+
+@mixin media-breakpoint-down($size) {
+    @if not map-has-key(variables.$breakpoints, $size) {
+        @error "Property #{$size} is not valid breakpoint size. Valid sizes: #{map.keys(variables.$breakpoints)}";
+    }
+    @if map-has-key(variables.$breakpoints, $size) {
+        $size: (map-get(variables.$breakpoints, $size) - 0.02px);
+
+        @media (max-width: $size) {
+            @content;
+        }
+    }
+}
+
+// css3 vendor prefix
+@mixin vendor-prefix($prop, $value) {
+    -webkit-#{$prop}: #{$value};
+    -moz-#{$prop}: #{$value};
+    -ms-#{$prop}: #{$value};
+    -o-#{$prop}: #{$value};
+    #{$prop}: #{$value};
+}
+
+// keyframes
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}

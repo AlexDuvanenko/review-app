@@ -1,0 +1,7 @@
+/* --- Typography --- */
+
+@use '../utils/' as Util;
+
+h1 {
+    font-size: Util.$font-size-large;
+}

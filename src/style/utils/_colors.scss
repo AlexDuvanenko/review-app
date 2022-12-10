@@ -1,0 +1,27 @@
+@use 'variables';
+@use 'sass:color';
+
+@each $key, $val in variables.$colors {
+    .text-#{$key} {
+        color: $val;
+    }
+
+    .bg-#{$key} {
+        background-color: $val;
+    }
+
+    // variations
+    @if ($val != variables.$black and $val != variables.$white) {
+        @for $i from 1 through 5 {
+            .bg-#{$key}-dark-#{$i} {
+                background-color: color.scale($val, $lightness: -7.5% * $i);
+            }
+
+            @if ($val != variables.$surface-base) {
+                .bg-#{$key}-light-#{$i} {
+                    background-color: color.scale($val, $lightness: 7.5% * $i);
+                }
+            }
+        }
+    }
+}
