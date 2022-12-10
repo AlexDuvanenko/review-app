@@ -2,12 +2,8 @@ import { Link } from 'react-router-dom';
 
 export default function RecipeSummary({recipe}) {
     return (
-        <>
-            <ul>
-                <li>
-                    <Link to={`${recipe.idMeal}`}>{recipe.strMeal}</Link>
-                </li>
-            </ul>
-        </>
+        <div className="p-3">
+            <Link to={`${recipe.idMeal}`}>{recipe.strMeal}</Link>
+        </div>
     );
 }
