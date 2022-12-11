@@ -6,7 +6,7 @@ import RecipeListContainer from './routes/RecipeListContainer';
 import RecipeDetail from './component/recipe/RecipeDetail';
 import ErrorPage from './ErrorPage';
 
-import './style/styles.scss';
+// import './style/styles.scss';
 
 const router = createBrowserRouter([
   {
