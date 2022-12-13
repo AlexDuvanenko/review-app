@@ -24,7 +24,7 @@ export default function Recipes() {
 
     return ( 
         <div>
-            <h1>Recipes</h1>
+            <h1 className="text-3xl font-semi-bold">Recipes</h1>
             {loading && <h2 className="py-2">Loading, please wait...</h2>}
             {(!!recipes.length && !loading) && <RecipeList recipes={recipes} />}
         </div>
