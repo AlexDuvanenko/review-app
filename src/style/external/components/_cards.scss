@@ -1,0 +1,32 @@
+@use '../../internal/abstracts/mixins';
+@use '../bootstrap';
+
+.card {
+    
+    .card-img-overlay {
+        justify-content: center;
+        align-items: center;
+
+        .card-title {
+            opacity: 0;
+        }
+    }
+
+    .card-body {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include bootstrap.media-breakpoint-up(lg) {
+        &:hover {
+            .card-title {
+                opacity: 100;
+                @include mixins.vendor-prefix(transition, 0.35s ease-out);
+            }
+            .card-img {
+                filter: brightness(60%) blur(4px);
+                @include mixins.vendor-prefix(transition, 0.35s ease-out);
+            }
+        }
+    }
+}
