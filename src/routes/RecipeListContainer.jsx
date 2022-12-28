@@ -22,12 +22,11 @@ export default function Recipes() {
             .finally(() => setLoading(false));
     }, []);
 
-    if (loading) return <h1>Loading...</h1>;
-
     return ( 
         <div>
             <h1>Recipes</h1>
-            {!!recipes.length && <RecipeList recipes={recipes} />}
+            {loading && <h2 className="py-2">Loading, please wait...</h2>}
+            {(!!recipes.length && !loading) && <RecipeList recipes={recipes} />}
         </div>
     );
 }

@@ -1,19 +1,16 @@
 // use each main partial
 
 // utils
-@use 'utils';
+@use 'internal/abstracts';
 
 // vendors
-@use 'vendors';
-
-// base
-@use 'base';
+@use 'external';
 
 // layout
-@use 'layout';
+@use 'internal/layout';
 
 // components
-@use 'components';
+@use 'internal/components';
 
 // pages
-@use 'pages';
+@use 'internal/pages';
